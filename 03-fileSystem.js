@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/read", (req, res) => {
-  fs.readFile("./file.txt", "utf8", (err, data) => {
+  fs.readFile("./car.txt", "utf8", (err, data) => {
     if (err) res.send("Cannot Read File!");
     res.send(data);
   });
@@ -16,7 +16,7 @@ app.get("/read", (req, res) => {
 
 app.get("/write", (req, res) => {
   data = "Honda";
-  fs.writeFile("./file.txt", data, (err) => {
+  fs.writeFile("./car.txt", data, (err) => {
     if (err) res.send("Cannod Write to File!");
     res.send("Successfully Written");
   });
@@ -24,7 +24,7 @@ app.get("/write", (req, res) => {
 
 app.get("/append", (req, res) => {
   data = "Audi";
-  fs.appendFile("./file.txt", " " + data, (err) => {
+  fs.appendFile("./car.txt", " " + data, (err) => {
     if (err) res.send("Cannot Append to File!");
     res.send("Successfully Appended");
   });
